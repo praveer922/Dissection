@@ -1,0 +1,5 @@
+﻿cmake_minimum_required(VERSION 3.13)
+project(dissection)
+add_executable (dissection "main.cpp")
+target_link_directories(dissection PRIVATE ${CMAKE_SOURCE_DIR}/lib/)
+target_link_libraries(dissection lunasvg)

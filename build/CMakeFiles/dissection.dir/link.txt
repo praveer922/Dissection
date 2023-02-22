@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/dissection.dir/main.cpp.o -o dissection   -L/mnt/c/Users/tewar/source/repos/Dissection/source/lib  -Wl,-rpath,/mnt/c/Users/tewar/source/repos/Dissection/source/lib -llunasvg 

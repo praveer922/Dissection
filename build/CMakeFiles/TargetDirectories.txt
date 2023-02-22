@@ -1,0 +1,3 @@
+/mnt/c/Users/tewar/source/repos/Dissection/build/CMakeFiles/dissection.dir
+/mnt/c/Users/tewar/source/repos/Dissection/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/tewar/source/repos/Dissection/build/CMakeFiles/rebuild_cache.dir
