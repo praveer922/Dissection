@@ -152,8 +152,7 @@ CMakeFiles/dissection.dir/main.cpp.o: \
  /mnt/c/Users/tewar/source/repos/Dissection/source/../include/stb_image_write.h \
  /usr/include/c++/11/stdlib.h /usr/include/string.h \
  /usr/include/strings.h /usr/include/assert.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/cotmatrix.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/igl_inline.h \
+ /usr/local/include/igl/cotmatrix.h /usr/local/include/igl/igl_inline.h \
  /usr/local/include/Eigen/Dense /usr/local/include/Eigen/Core \
  /usr/local/include/Eigen/src/Core/util/DisableStupidWarnings.h \
  /usr/local/include/Eigen/src/Core/util/Macros.h \
@@ -489,56 +488,43 @@ CMakeFiles/dissection.dir/main.cpp.o: \
  /usr/local/include/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
  /usr/local/include/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
  /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
- /usr/include/c++/11/bits/list.tcc \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/cotmatrix.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/cotmatrix.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/cotmatrix_entries.h \
- /usr/local/include/Eigen/Core \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/cotmatrix_entries.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/doublearea.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/doublearea.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/edge_lengths.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/edge_lengths.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/squared_edge_lengths.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/squared_edge_lengths.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/parallel_for.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/default_num_threads.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/default_num_threads.cpp \
+ /usr/include/c++/11/bits/list.tcc /usr/local/include/igl/cotmatrix.cpp \
+ /usr/local/include/igl/cotmatrix.h \
+ /usr/local/include/igl/cotmatrix_entries.h /usr/local/include/Eigen/Core \
+ /usr/local/include/igl/cotmatrix_entries.cpp \
+ /usr/local/include/igl/doublearea.h \
+ /usr/local/include/igl/doublearea.cpp \
+ /usr/local/include/igl/edge_lengths.h \
+ /usr/local/include/igl/edge_lengths.cpp \
+ /usr/local/include/igl/squared_edge_lengths.h \
+ /usr/local/include/igl/squared_edge_lengths.cpp \
+ /usr/local/include/igl/parallel_for.h \
+ /usr/local/include/igl/default_num_threads.h \
+ /usr/local/include/igl/default_num_threads.cpp \
  /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
  /usr/include/c++/11/bits/parse_numbers.h /usr/include/c++/11/iostream \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/sort.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/sort.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/SortableRow.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/reorder.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/reorder.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/IndexComparison.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/colon.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/colon.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/LinSpaced.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/face_areas.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/face_areas.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/volume.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/volume.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/cross.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/cross.cpp \
- /usr/local/include/Eigen/Geometry \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/dihedral_angles.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/dihedral_angles.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/verbose.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/massmatrix.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/massmatrix.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/massmatrix_intrinsic.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/massmatrix_intrinsic.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/normalize_row_sums.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/normalize_row_sums.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/sparse.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/sparse.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/repmat.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/repmat.cpp \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/diag.h \
- /mnt/c/Users/tewar/source/repos/Dissection/source/../include/igl/diag.cpp \
+ /usr/local/include/igl/sort.h /usr/local/include/igl/sort.cpp \
+ /usr/local/include/igl/SortableRow.h /usr/local/include/igl/reorder.h \
+ /usr/local/include/igl/reorder.cpp \
+ /usr/local/include/igl/IndexComparison.h /usr/local/include/igl/colon.h \
+ /usr/local/include/igl/colon.cpp /usr/local/include/igl/LinSpaced.h \
+ /usr/local/include/igl/face_areas.h \
+ /usr/local/include/igl/face_areas.cpp /usr/local/include/igl/volume.h \
+ /usr/local/include/igl/volume.cpp /usr/local/include/igl/cross.h \
+ /usr/local/include/igl/cross.cpp /usr/local/include/Eigen/Geometry \
+ /usr/local/include/igl/dihedral_angles.h \
+ /usr/local/include/igl/dihedral_angles.cpp \
+ /usr/local/include/igl/verbose.h /usr/local/include/igl/massmatrix.h \
+ /usr/local/include/igl/massmatrix.cpp \
+ /usr/local/include/igl/massmatrix_intrinsic.h \
+ /usr/local/include/igl/massmatrix_intrinsic.cpp \
+ /usr/local/include/igl/normalize_row_sums.h \
+ /usr/local/include/igl/normalize_row_sums.cpp \
+ /usr/local/include/igl/sparse.h /usr/local/include/igl/sparse.cpp \
+ /usr/local/include/igl/repmat.h /usr/local/include/igl/repmat.cpp \
+ /usr/local/include/igl/diag.h /usr/local/include/igl/diag.cpp \
  /usr/local/include/unsupported/Eigen/SparseExtra \
  /usr/local/include/Eigen/Sparse \
  /usr/local/include/Eigen/src/Core/util/DisableStupidWarnings.h \
@@ -554,4 +540,165 @@ CMakeFiles/dissection.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
  /usr/local/include/unsupported/Eigen/src/SparseExtra/MatrixMarketIterator.h \
  /usr/local/include/Eigen/src/Core/util/ReenableStupidWarnings.h \
- /usr/local/include/Eigen/QR
+ /usr/local/include/Eigen/QR /usr/local/include/igl/opengl/glfw/Viewer.h \
+ /usr/local/include/igl/igl_inline.h \
+ /usr/local/include/igl/opengl/MeshGL.h \
+ /usr/local/include/igl/igl_inline.h \
+ /usr/local/include/igl/opengl/MeshGL.cpp \
+ /usr/local/include/igl/opengl/MeshGL.h \
+ /usr/local/include/igl/opengl/bind_vertex_attrib_array.h \
+ /usr/local/include/igl/opengl/gl.h /usr/local/include/glad/gl.h \
+ /usr/include/KHR/khrplatform.h /usr/local/include/igl/igl_inline.h \
+ /usr/local/include/igl/opengl/bind_vertex_attrib_array.cpp \
+ /usr/local/include/igl/opengl/create_shader_program.h \
+ /usr/local/include/igl/opengl/create_shader_program.cpp \
+ /usr/local/include/igl/opengl/load_shader.h \
+ /usr/local/include/igl/opengl/load_shader.cpp \
+ /usr/local/include/igl/opengl/print_shader_info_log.h \
+ /usr/local/include/igl/opengl/print_shader_info_log.cpp \
+ /usr/local/include/igl/opengl/print_program_info_log.h \
+ /usr/local/include/igl/opengl/print_program_info_log.cpp \
+ /usr/local/include/igl/opengl/destroy_shader_program.h \
+ /usr/local/include/igl/opengl/destroy_shader_program.cpp \
+ /usr/local/include/igl/opengl/report_gl_error.h \
+ /usr/local/include/igl/opengl/report_gl_error.cpp \
+ /usr/local/include/igl/verbose.h \
+ /usr/local/include/igl/opengl/verasansmono_compressed.h \
+ /usr/local/include/igl/igl_inline.h \
+ /usr/local/include/igl/opengl/verasansmono_compressed.cpp \
+ /usr/local/include/igl/opengl/ViewerCore.h \
+ /usr/local/include/igl/opengl/MeshGL.h \
+ /usr/local/include/igl/serialize.h /usr/include/c++/11/numeric \
+ /usr/include/c++/11/bits/stl_numeric.h \
+ /usr/include/c++/11/pstl/glue_numeric_defs.h /usr/include/c++/11/set \
+ /usr/include/c++/11/bits/stl_set.h \
+ /usr/include/c++/11/bits/stl_multiset.h \
+ /usr/local/include/igl/opengl/ViewerCore.cpp \
+ /usr/local/include/igl/opengl/ViewerCore.h \
+ /usr/local/include/igl/opengl/ViewerData.h \
+ /usr/local/include/igl/colormap.h /usr/local/include/igl/colormap.cpp \
+ /usr/local/include/igl/colormap.h \
+ /usr/local/include/igl/opengl/ViewerData.cpp \
+ /usr/local/include/igl/per_face_normals.h \
+ /usr/local/include/igl/per_face_normals.cpp \
+ /usr/local/include/igl/per_face_normals.h \
+ /usr/local/include/igl/material_colors.h \
+ /usr/local/include/igl/per_vertex_normals.h \
+ /usr/local/include/igl/per_vertex_normals.cpp \
+ /usr/local/include/igl/per_vertex_normals.h \
+ /usr/local/include/igl/get_seconds.h \
+ /usr/local/include/igl/get_seconds.cpp \
+ /usr/local/include/igl/internal_angles.h \
+ /usr/local/include/igl/deprecated.h \
+ /usr/local/include/igl/internal_angles.cpp \
+ /usr/local/include/igl/quat_to_mat.h \
+ /usr/local/include/igl/quat_to_mat.cpp \
+ /usr/local/include/igl/quat_to_mat.h /usr/local/include/igl/null.h \
+ /usr/local/include/igl/null.cpp /usr/local/include/igl/null.h \
+ /usr/local/include/igl/EPS.h /usr/local/include/igl/EPS.cpp \
+ /usr/local/include/igl/snap_to_fixed_up.h \
+ /usr/local/include/igl/snap_to_fixed_up.cpp \
+ /usr/local/include/igl/snap_to_fixed_up.h \
+ /usr/local/include/igl/look_at.h /usr/local/include/igl/look_at.cpp \
+ /usr/local/include/igl/look_at.h /usr/local/include/igl/frustum.h \
+ /usr/local/include/igl/frustum.cpp /usr/local/include/igl/frustum.h \
+ /usr/local/include/igl/ortho.h /usr/local/include/igl/ortho.cpp \
+ /usr/local/include/igl/ortho.h /usr/local/include/igl/massmatrix.h \
+ /usr/local/include/igl/barycenter.h \
+ /usr/local/include/igl/barycenter.cpp \
+ /usr/local/include/igl/barycenter.h /usr/local/include/igl/PI.h \
+ /usr/local/include/igl/opengl/read_pixels.h \
+ /usr/local/include/igl/opengl/read_pixels.cpp \
+ /usr/local/include/igl/opengl/ViewerData.h \
+ /usr/local/include/igl/opengl/glfw/ViewerPlugin.h \
+ /usr/local/include/igl/opengl/glfw/Viewer.cpp \
+ /usr/local/include/igl/opengl/glfw/Viewer.h /usr/local/include/Eigen/LU \
+ /usr/local/include/igl/opengl/gl.h \
+ /usr/local/include/igl/opengl/report_gl_error.h \
+ /usr/local/include/GLFW/glfw3.h /usr/include/c++/11/iomanip \
+ /usr/include/c++/11/locale \
+ /usr/include/c++/11/bits/locale_facets_nonio.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/11/bits/locale_conv.h \
+ /usr/include/c++/11/bits/quoted_string.h \
+ /usr/local/include/igl/project.h /usr/local/include/igl/project.cpp \
+ /usr/local/include/igl/project.h /usr/local/include/igl/get_seconds.h \
+ /usr/local/include/igl/readOBJ.h /usr/local/include/igl/readOBJ.cpp \
+ /usr/local/include/igl/readOBJ.h /usr/local/include/igl/list_to_matrix.h \
+ /usr/local/include/igl/list_to_matrix.cpp \
+ /usr/local/include/igl/max_size.h /usr/local/include/igl/max_size.cpp \
+ /usr/local/include/igl/min_size.h /usr/local/include/igl/min_size.cpp \
+ /usr/local/include/igl/polygon_corners.h \
+ /usr/local/include/igl/polygon_corners.cpp \
+ /usr/local/include/igl/polygons_to_triangles.h \
+ /usr/local/include/igl/polygons_to_triangles.cpp \
+ /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
+ /usr/local/include/igl/read_triangle_mesh.h \
+ /usr/local/include/igl/read_triangle_mesh.cpp \
+ /usr/local/include/igl/read_triangle_mesh.h \
+ /usr/local/include/igl/readMSH.h /usr/local/include/igl/readMSH.cpp \
+ /usr/local/include/igl/MshLoader.h /usr/local/include/igl/MshLoader.cpp \
+ /usr/local/include/igl/readMESH.h /usr/local/include/igl/readMESH.cpp \
+ /usr/local/include/igl/readOFF.h /usr/local/include/igl/readOFF.cpp \
+ /usr/local/include/igl/readSTL.h /usr/local/include/igl/readSTL.cpp \
+ /usr/local/include/igl/string_utils.h \
+ /usr/local/include/igl/string_utils.cpp \
+ /usr/local/include/igl/read_file_binary.h \
+ /usr/local/include/igl/read_file_binary.cpp \
+ /usr/local/include/igl/FileMemoryStream.h \
+ /usr/local/include/igl/readPLY.h /usr/local/include/igl/tinyply.h \
+ /usr/local/include/igl/tinyply.cpp /usr/local/include/igl/readPLY.cpp \
+ /usr/local/include/igl/readWRL.h /usr/local/include/igl/readWRL.cpp \
+ /usr/local/include/igl/pathinfo.h /usr/local/include/igl/pathinfo.cpp \
+ /usr/local/include/igl/dirname.h /usr/local/include/igl/dirname.cpp \
+ /usr/local/include/igl/basename.h /usr/local/include/igl/basename.cpp \
+ /usr/local/include/igl/boundary_facets.h \
+ /usr/local/include/igl/boundary_facets.cpp \
+ /usr/local/include/igl/face_occurrences.h \
+ /usr/local/include/igl/face_occurrences.cpp \
+ /usr/local/include/igl/matrix_to_list.h \
+ /usr/local/include/igl/matrix_to_list.cpp \
+ /usr/local/include/igl/unique_rows.h \
+ /usr/local/include/igl/unique_rows.cpp /usr/local/include/igl/sortrows.h \
+ /usr/local/include/igl/sortrows.cpp /usr/local/include/igl/accumarray.h \
+ /usr/local/include/igl/accumarray.cpp \
+ /usr/local/include/igl/slice_mask.h \
+ /usr/local/include/igl/slice_mask.cpp /usr/local/include/igl/slice.h \
+ /usr/local/include/igl/slice.cpp /usr/local/include/igl/slice_sorted.h \
+ /usr/local/include/igl/slice_sorted.cpp /usr/local/include/igl/find.h \
+ /usr/local/include/igl/find.cpp /usr/local/include/igl/adjacency_list.h \
+ /usr/local/include/igl/adjacency_list.cpp \
+ /usr/local/include/igl/adjacency_list.h \
+ /usr/local/include/igl/writeOBJ.h /usr/local/include/igl/writeOBJ.cpp \
+ /usr/local/include/igl/writeOBJ.h /usr/local/include/igl/writeOFF.h \
+ /usr/local/include/igl/writeOFF.cpp /usr/local/include/igl/writeOFF.h \
+ /usr/local/include/igl/massmatrix.h \
+ /usr/local/include/igl/file_dialog_open.h \
+ /usr/local/include/igl/file_dialog_open.cpp \
+ /usr/local/include/igl/file_dialog_open.h \
+ /usr/local/include/igl/file_dialog_save.h \
+ /usr/local/include/igl/file_dialog_save.cpp \
+ /usr/local/include/igl/file_dialog_save.h \
+ /usr/local/include/igl/quat_mult.h /usr/local/include/igl/quat_mult.cpp \
+ /usr/local/include/igl/quat_mult.h \
+ /usr/local/include/igl/axis_angle_to_quat.h \
+ /usr/local/include/igl/axis_angle_to_quat.cpp \
+ /usr/local/include/igl/axis_angle_to_quat.h \
+ /usr/local/include/igl/trackball.h /usr/local/include/igl/trackball.cpp \
+ /usr/local/include/igl/trackball.h /usr/local/include/igl/dot.h \
+ /usr/local/include/igl/dot.cpp \
+ /usr/local/include/igl/two_axis_valuator_fixed_up.h \
+ /usr/local/include/igl/two_axis_valuator_fixed_up.cpp \
+ /usr/local/include/igl/two_axis_valuator_fixed_up.h \
+ /usr/local/include/igl/PI.h \
+ /usr/local/include/igl/snap_to_canonical_view_quat.h \
+ /usr/local/include/igl/snap_to_canonical_view_quat.cpp \
+ /usr/local/include/igl/snap_to_canonical_view_quat.h \
+ /usr/local/include/igl/canonical_quaternions.h \
+ /usr/local/include/igl/canonical_quaternions.cpp \
+ /usr/local/include/igl/normalize_quat.h \
+ /usr/local/include/igl/normalize_quat.cpp \
+ /usr/local/include/igl/unproject.h /usr/local/include/igl/unproject.cpp \
+ /usr/local/include/igl/unproject.h
