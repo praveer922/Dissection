@@ -1,8 +1,9 @@
 CMakeFiles/dissection.dir/main.cpp.o: \
  /mnt/c/Users/tewar/source/repos/Dissection/source/main.cpp \
- /usr/include/stdc-predef.h /usr/local/include/igl/cotmatrix.h \
- /usr/local/include/igl/igl_inline.h /usr/local/include/Eigen/Dense \
- /usr/local/include/Eigen/Core \
+ /usr/include/stdc-predef.h /usr/local/include/igl/opengl/glfw/Viewer.h \
+ /usr/local/include/igl/igl_inline.h \
+ /usr/local/include/igl/opengl/MeshGL.h \
+ /usr/local/include/igl/igl_inline.h /usr/local/include/Eigen/Core \
  /usr/local/include/Eigen/src/Core/util/DisableStupidWarnings.h \
  /usr/local/include/Eigen/src/Core/util/Macros.h \
  /usr/include/c++/11/cmath \
@@ -342,17 +343,40 @@ CMakeFiles/dissection.dir/main.cpp.o: \
  /usr/local/include/Eigen/src/Core/StlIterators.h \
  /usr/local/include/Eigen/src/Core/GlobalFunctions.h \
  /usr/local/include/Eigen/src/Core/util/ReenableStupidWarnings.h \
- /usr/local/include/Eigen/LU /usr/local/include/Eigen/src/misc/Kernel.h \
- /usr/local/include/Eigen/src/misc/Image.h \
- /usr/local/include/Eigen/src/LU/FullPivLU.h \
- /usr/local/include/Eigen/src/LU/PartialPivLU.h \
- /usr/local/include/Eigen/src/LU/Determinant.h \
- /usr/local/include/Eigen/src/LU/InverseImpl.h \
- /usr/local/include/Eigen/src/LU/arch/InverseSize4.h \
- /usr/local/include/Eigen/Cholesky /usr/local/include/Eigen/Jacobi \
+ /usr/local/include/igl/opengl/MeshGL.cpp \
+ /usr/local/include/igl/opengl/MeshGL.h \
+ /usr/local/include/igl/opengl/bind_vertex_attrib_array.h \
+ /usr/local/include/igl/opengl/gl.h /usr/local/include/glad/gl.h \
+ /usr/include/KHR/khrplatform.h /usr/local/include/igl/igl_inline.h \
+ /usr/local/include/igl/opengl/bind_vertex_attrib_array.cpp \
+ /usr/local/include/igl/opengl/create_shader_program.h \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/bits/stl_map.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/local/include/igl/opengl/create_shader_program.cpp \
+ /usr/local/include/igl/opengl/load_shader.h \
+ /usr/local/include/igl/opengl/load_shader.cpp \
+ /usr/local/include/igl/opengl/print_shader_info_log.h \
+ /usr/local/include/igl/opengl/print_shader_info_log.cpp \
+ /usr/local/include/igl/opengl/print_program_info_log.h \
+ /usr/local/include/igl/opengl/print_program_info_log.cpp \
+ /usr/include/c++/11/iostream \
+ /usr/local/include/igl/opengl/destroy_shader_program.h \
+ /usr/local/include/igl/opengl/destroy_shader_program.cpp \
+ /usr/local/include/igl/opengl/report_gl_error.h \
+ /usr/local/include/igl/opengl/report_gl_error.cpp \
+ /usr/local/include/igl/verbose.h \
+ /usr/local/include/igl/opengl/verasansmono_compressed.h \
+ /usr/local/include/igl/igl_inline.h \
+ /usr/local/include/igl/opengl/verasansmono_compressed.cpp \
+ /usr/local/include/igl/opengl/ViewerCore.h \
+ /usr/local/include/igl/opengl/MeshGL.h /usr/local/include/Eigen/Geometry \
+ /usr/local/include/Eigen/Core /usr/local/include/Eigen/SVD \
+ /usr/local/include/Eigen/QR /usr/local/include/Eigen/Cholesky \
+ /usr/local/include/Eigen/Jacobi \
  /usr/local/include/Eigen/src/Jacobi/Jacobi.h \
  /usr/local/include/Eigen/src/Cholesky/LLT.h \
- /usr/local/include/Eigen/src/Cholesky/LDLT.h /usr/local/include/Eigen/QR \
+ /usr/local/include/Eigen/src/Cholesky/LDLT.h \
  /usr/local/include/Eigen/Householder \
  /usr/local/include/Eigen/src/Householder/Householder.h \
  /usr/local/include/Eigen/src/Householder/HouseholderSequence.h \
@@ -361,13 +385,18 @@ CMakeFiles/dissection.dir/main.cpp.o: \
  /usr/local/include/Eigen/src/QR/FullPivHouseholderQR.h \
  /usr/local/include/Eigen/src/QR/ColPivHouseholderQR.h \
  /usr/local/include/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
- /usr/local/include/Eigen/SVD \
  /usr/local/include/Eigen/src/misc/RealSvd2x2.h \
  /usr/local/include/Eigen/src/SVD/UpperBidiagonalization.h \
  /usr/local/include/Eigen/src/SVD/SVDBase.h \
  /usr/local/include/Eigen/src/SVD/JacobiSVD.h \
- /usr/local/include/Eigen/src/SVD/BDCSVD.h \
- /usr/local/include/Eigen/Geometry \
+ /usr/local/include/Eigen/src/SVD/BDCSVD.h /usr/local/include/Eigen/LU \
+ /usr/local/include/Eigen/src/misc/Kernel.h \
+ /usr/local/include/Eigen/src/misc/Image.h \
+ /usr/local/include/Eigen/src/LU/FullPivLU.h \
+ /usr/local/include/Eigen/src/LU/PartialPivLU.h \
+ /usr/local/include/Eigen/src/LU/Determinant.h \
+ /usr/local/include/Eigen/src/LU/InverseImpl.h \
+ /usr/local/include/Eigen/src/LU/arch/InverseSize4.h \
  /usr/local/include/Eigen/src/Geometry/OrthoMethods.h \
  /usr/local/include/Eigen/src/Geometry/EulerAngles.h \
  /usr/local/include/Eigen/src/Geometry/Homogeneous.h \
@@ -383,6 +412,26 @@ CMakeFiles/dissection.dir/main.cpp.o: \
  /usr/local/include/Eigen/src/Geometry/AlignedBox.h \
  /usr/local/include/Eigen/src/Geometry/Umeyama.h \
  /usr/local/include/Eigen/src/Geometry/arch/Geometry_SIMD.h \
+ /usr/local/include/igl/serialize.h /usr/include/c++/11/fstream \
+ /usr/include/c++/11/bits/codecvt.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+ /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/numeric \
+ /usr/include/c++/11/bits/stl_numeric.h /usr/include/c++/11/bit \
+ /usr/include/c++/11/pstl/glue_numeric_defs.h /usr/include/c++/11/set \
+ /usr/include/c++/11/bits/stl_set.h \
+ /usr/include/c++/11/bits/stl_multiset.h /usr/include/c++/11/memory \
+ /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/11/bits/align.h /usr/include/c++/11/bits/unique_ptr.h \
+ /usr/include/c++/11/bits/shared_ptr.h \
+ /usr/include/c++/11/bits/shared_ptr_base.h \
+ /usr/include/c++/11/bits/allocated_ptr.h \
+ /usr/include/c++/11/ext/concurrence.h \
+ /usr/include/c++/11/bits/shared_ptr_atomic.h \
+ /usr/include/c++/11/backward/auto_ptr.h \
+ /usr/include/c++/11/pstl/glue_memory_defs.h /usr/include/c++/11/list \
+ /usr/include/c++/11/bits/stl_list.h /usr/include/c++/11/bits/list.tcc \
+ /usr/local/include/Eigen/Dense /usr/local/include/Eigen/Geometry \
  /usr/local/include/Eigen/Eigenvalues \
  /usr/local/include/Eigen/src/Eigenvalues/Tridiagonalization.h \
  /usr/local/include/Eigen/src/Eigenvalues/RealSchur.h \
@@ -401,9 +450,6 @@ CMakeFiles/dissection.dir/main.cpp.o: \
  /usr/local/include/Eigen/src/Eigenvalues/RealQZ.h \
  /usr/local/include/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
  /usr/local/include/Eigen/Sparse /usr/local/include/Eigen/SparseCore \
- /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
- /usr/include/c++/11/bits/stl_map.h \
- /usr/include/c++/11/bits/stl_multimap.h \
  /usr/local/include/Eigen/src/SparseCore/SparseUtil.h \
  /usr/local/include/Eigen/src/SparseCore/SparseMatrixBase.h \
  /usr/local/include/Eigen/src/plugins/CommonCwiseUnaryOps.h \
@@ -475,11 +521,18 @@ CMakeFiles/dissection.dir/main.cpp.o: \
  /usr/local/include/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h \
  /usr/local/include/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
  /usr/local/include/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
- /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
- /usr/include/c++/11/bits/allocated_ptr.h \
- /usr/include/c++/11/bits/list.tcc /usr/local/include/igl/cotmatrix.cpp \
- /usr/local/include/igl/cotmatrix.h \
- /usr/local/include/igl/cotmatrix_entries.h /usr/local/include/Eigen/Core \
+ /usr/local/include/igl/igl_inline.h \
+ /usr/local/include/igl/opengl/ViewerCore.cpp \
+ /usr/local/include/igl/opengl/ViewerCore.h \
+ /usr/local/include/igl/opengl/ViewerData.h \
+ /usr/local/include/igl/colormap.h /usr/local/include/igl/colormap.cpp \
+ /usr/local/include/igl/colormap.h \
+ /usr/local/include/igl/opengl/ViewerData.cpp \
+ /usr/local/include/igl/per_face_normals.h \
+ /usr/local/include/igl/per_face_normals.cpp \
+ /usr/local/include/igl/per_face_normals.h \
+ /usr/local/include/igl/cotmatrix.h /usr/local/include/igl/cotmatrix.cpp \
+ /usr/local/include/igl/cotmatrix_entries.h \
  /usr/local/include/igl/cotmatrix_entries.cpp \
  /usr/local/include/igl/doublearea.h \
  /usr/local/include/igl/doublearea.cpp \
@@ -491,19 +544,17 @@ CMakeFiles/dissection.dir/main.cpp.o: \
  /usr/local/include/igl/default_num_threads.h \
  /usr/local/include/igl/default_num_threads.cpp \
  /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
- /usr/include/c++/11/bits/unique_ptr.h \
  /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
- /usr/include/c++/11/bits/parse_numbers.h /usr/include/c++/11/iostream \
- /usr/local/include/igl/sort.h /usr/local/include/igl/sort.cpp \
- /usr/local/include/igl/SortableRow.h /usr/local/include/igl/reorder.h \
- /usr/local/include/igl/reorder.cpp \
+ /usr/include/c++/11/bits/parse_numbers.h /usr/local/include/igl/sort.h \
+ /usr/local/include/igl/sort.cpp /usr/local/include/igl/SortableRow.h \
+ /usr/local/include/igl/reorder.h /usr/local/include/igl/reorder.cpp \
  /usr/local/include/igl/IndexComparison.h /usr/local/include/igl/colon.h \
  /usr/local/include/igl/colon.cpp /usr/local/include/igl/LinSpaced.h \
  /usr/local/include/igl/face_areas.h \
  /usr/local/include/igl/face_areas.cpp /usr/local/include/igl/volume.h \
  /usr/local/include/igl/volume.cpp /usr/local/include/igl/cross.h \
- /usr/local/include/igl/cross.cpp /usr/local/include/Eigen/Geometry \
+ /usr/local/include/igl/cross.cpp \
  /usr/local/include/igl/dihedral_angles.h \
  /usr/local/include/igl/dihedral_angles.cpp \
  /usr/local/include/igl/verbose.h /usr/local/include/igl/massmatrix.h \
@@ -518,10 +569,6 @@ CMakeFiles/dissection.dir/main.cpp.o: \
  /usr/local/include/unsupported/Eigen/SparseExtra \
  /usr/local/include/Eigen/Sparse \
  /usr/local/include/Eigen/src/Core/util/DisableStupidWarnings.h \
- /usr/include/c++/11/fstream /usr/include/c++/11/bits/codecvt.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
- /usr/include/c++/11/bits/fstream.tcc \
  /usr/local/include/unsupported/Eigen/src/SparseExtra/DynamicSparseMatrix.h \
  /usr/local/include/unsupported/Eigen/src/SparseExtra/BlockOfDynamicSparseMatrix.h \
  /usr/local/include/unsupported/Eigen/src/SparseExtra/RandomSetter.h \
@@ -530,56 +577,7 @@ CMakeFiles/dissection.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
  /usr/local/include/unsupported/Eigen/src/SparseExtra/MatrixMarketIterator.h \
  /usr/local/include/Eigen/src/Core/util/ReenableStupidWarnings.h \
- /usr/local/include/Eigen/QR /usr/local/include/igl/opengl/glfw/Viewer.h \
- /usr/local/include/igl/igl_inline.h \
- /usr/local/include/igl/opengl/MeshGL.h \
- /usr/local/include/igl/igl_inline.h \
- /usr/local/include/igl/opengl/MeshGL.cpp \
- /usr/local/include/igl/opengl/MeshGL.h \
- /usr/local/include/igl/opengl/bind_vertex_attrib_array.h \
- /usr/local/include/igl/opengl/gl.h /usr/local/include/glad/gl.h \
- /usr/include/KHR/khrplatform.h /usr/local/include/igl/igl_inline.h \
- /usr/local/include/igl/opengl/bind_vertex_attrib_array.cpp \
- /usr/local/include/igl/opengl/create_shader_program.h \
- /usr/local/include/igl/opengl/create_shader_program.cpp \
- /usr/local/include/igl/opengl/load_shader.h \
- /usr/local/include/igl/opengl/load_shader.cpp \
- /usr/local/include/igl/opengl/print_shader_info_log.h \
- /usr/local/include/igl/opengl/print_shader_info_log.cpp \
- /usr/local/include/igl/opengl/print_program_info_log.h \
- /usr/local/include/igl/opengl/print_program_info_log.cpp \
- /usr/local/include/igl/opengl/destroy_shader_program.h \
- /usr/local/include/igl/opengl/destroy_shader_program.cpp \
- /usr/local/include/igl/opengl/report_gl_error.h \
- /usr/local/include/igl/opengl/report_gl_error.cpp \
- /usr/local/include/igl/verbose.h \
- /usr/local/include/igl/opengl/verasansmono_compressed.h \
- /usr/local/include/igl/igl_inline.h \
- /usr/local/include/igl/opengl/verasansmono_compressed.cpp \
- /usr/local/include/igl/opengl/ViewerCore.h \
- /usr/local/include/igl/opengl/MeshGL.h \
- /usr/local/include/igl/serialize.h /usr/include/c++/11/numeric \
- /usr/include/c++/11/bits/stl_numeric.h /usr/include/c++/11/bit \
- /usr/include/c++/11/pstl/glue_numeric_defs.h /usr/include/c++/11/set \
- /usr/include/c++/11/bits/stl_set.h \
- /usr/include/c++/11/bits/stl_multiset.h /usr/include/c++/11/memory \
- /usr/include/c++/11/bits/stl_raw_storage_iter.h \
- /usr/include/c++/11/bits/align.h /usr/include/c++/11/bits/shared_ptr.h \
- /usr/include/c++/11/bits/shared_ptr_base.h \
- /usr/include/c++/11/ext/concurrence.h \
- /usr/include/c++/11/bits/shared_ptr_atomic.h \
- /usr/include/c++/11/backward/auto_ptr.h \
- /usr/include/c++/11/pstl/glue_memory_defs.h \
- /usr/local/include/igl/opengl/ViewerCore.cpp \
- /usr/local/include/igl/opengl/ViewerCore.h \
- /usr/local/include/igl/opengl/ViewerData.h \
- /usr/local/include/igl/colormap.h /usr/local/include/igl/colormap.cpp \
- /usr/local/include/igl/colormap.h \
- /usr/local/include/igl/opengl/ViewerData.cpp \
- /usr/local/include/igl/per_face_normals.h \
- /usr/local/include/igl/per_face_normals.cpp \
- /usr/local/include/igl/per_face_normals.h \
- /usr/local/include/igl/material_colors.h \
+ /usr/local/include/Eigen/QR /usr/local/include/igl/material_colors.h \
  /usr/local/include/igl/per_vertex_normals.h \
  /usr/local/include/igl/per_vertex_normals.cpp \
  /usr/local/include/igl/per_vertex_normals.h \
