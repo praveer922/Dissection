@@ -29,8 +29,7 @@ Cluster Input::rasterize() {
         for (int j = 0; j < width; j++) {
             int index = i * width * 4 + (j * 4) + 3;
             if (bitmap.data()[index] >= 100) {
-                (cluster.xCoords).push_back(float(j));
-                (cluster.yCoords).push_back(float(height - i - 1)); //flip y coordinate because bitmap format is flipped
+                cluster.pixels.insert(std::pair(j, height - i - 1)); //flip y coordinate because bitmap format is flipped
             }
         }
     }

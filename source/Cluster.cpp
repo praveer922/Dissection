@@ -3,18 +3,20 @@
 Cluster::Cluster() {
 }
 
-void Cluster::generateRenderMeshes()
-{
-    V = Eigen::MatrixXd(xCoords.size() * 4, 2);
-    F = Eigen::MatrixXi(xCoords.size() * 2, 3);
+void Cluster::generateRenderMeshes() {
+    // render each pixel as two triangles that make up a square
+    // so this generates 4 points and 2 faces for each pixel
+
+    V = Eigen::MatrixXd(pixels.size() * 4, 2);
+    F = Eigen::MatrixXi(pixels.size() * 2, 3);
 
     int Vrow = 0;
     int Frow = 0;
-    for (int i = 0; i < xCoords.size(); i++) {
-        V.row(Vrow) << xCoords[i] - 0.5, yCoords[i] - 0.5;
-        V.row(Vrow + 1) << xCoords[i] - 0.5, yCoords[i] + 0.5;
-        V.row(Vrow + 2) << xCoords[i] + 0.5, yCoords[i] + 0.5;
-        V.row(Vrow + 3) << xCoords[i] + 0.5, yCoords[i] - 0.5;
+    for (auto pixel : pixels) {
+        V.row(Vrow) << pixel.first - 0.5, pixel.second - 0.5;
+        V.row(Vrow + 1) << pixel.first - 0.5, pixel.second + 0.5;
+        V.row(Vrow + 2) << pixel.first + 0.5, pixel.second + 0.5;
+        V.row(Vrow + 3) << pixel.first + 0.5, pixel.second - 0.5;
 
         F.row(Frow) << Vrow, Vrow + 1, Vrow + 2;
         F.row(Frow + 1) << Vrow, Vrow + 3, Vrow + 2;

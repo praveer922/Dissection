@@ -3,12 +3,12 @@
 #define CLUSTER_H
 #include <Eigen/Dense>
 #include <vector>
+#include <set>
 
 class Cluster {
 
 public:
-    std::vector<float> xCoords;
-    std::vector<float> yCoords;
+    std::set<std::pair<int, int>> pixels;
     Eigen::MatrixXd V;
     Eigen::MatrixXi F;
 
