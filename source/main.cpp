@@ -1,52 +1,16 @@
-﻿#define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "../include/lunasvg.h"
-#include "../include/stb_image_write.h"
-#include <igl/cotmatrix.h>
+﻿#include <igl/cotmatrix.h>
 #include <igl/opengl/glfw/Viewer.h>
 #include <Eigen/Dense>
 #include <Eigen/Sparse>
-#include <iostream>
+#include <vector>
+#include "Input.h"
 
+int main() {
+    Input input1 = Input("input/pentagon.svg", 10, 10);
+    Cluster cluster1 = input1.rasterize();
 
-using namespace lunasvg;
-
-int main()
-{
-    auto document = Document::loadFromFile("input/pentagon.svg");
-
-    if (!document) {
-        std::cout << "could not load doc\n";
-    }
-
-    std::uint32_t width = 10, height = 10;
-
-    auto bitmap = document->renderToBitmap(width, height);
-
-    if (!bitmap.valid()) {
-        std::cout << "bitmap not valid";
-    }
-    bitmap.convertToRGBA();
-
-    std::cout << "rasterized to bitmap\n";
-
-    std::cout << "Bitmap height: " << bitmap.height() << "\n";
-    std::cout << "Bitmap width: " << bitmap.width() << "\n";
-    std::cout << "Bitmap stride: " << bitmap.stride() << "\n";
-
-    std::vector<float> xCoords;
-    std::vector<float> yCoords;
-
-    
-
-    for (int i = 0; i < height; i++) {
-        for (int j = 0; j < width; j++) {
-            int index = i * width * 4 + (j*4) + 3;
-            if (bitmap.data()[index] >= 100) {
-                xCoords.push_back(float(j));
-                yCoords.push_back(float(height-i-1)); //flip y coordinate because bitmap format is flipped
-            }
-        }
-    }
+    std::vector<float> xCoords = std::vector<float>(cluster1.xCoords);
+    std::vector<float> yCoords = std::vector<float>(cluster1.yCoords);
 
 
     Eigen::MatrixXd V(xCoords.size()*4, 2);
@@ -76,6 +40,3 @@ int main()
 
     return 0;
 }
-
-
-//for (int j = 3; j < width * 4; j += 4) {

@@ -129,6 +129,54 @@ dissection/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/build
 .PHONY : dissection/fast
 
+Cluster.o: Cluster.cpp.o
+.PHONY : Cluster.o
+
+# target to build an object file
+Cluster.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/Cluster.cpp.o
+.PHONY : Cluster.cpp.o
+
+Cluster.i: Cluster.cpp.i
+.PHONY : Cluster.i
+
+# target to preprocess a source file
+Cluster.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/Cluster.cpp.i
+.PHONY : Cluster.cpp.i
+
+Cluster.s: Cluster.cpp.s
+.PHONY : Cluster.s
+
+# target to generate assembly for a file
+Cluster.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/Cluster.cpp.s
+.PHONY : Cluster.cpp.s
+
+Input.o: Input.cpp.o
+.PHONY : Input.o
+
+# target to build an object file
+Input.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/Input.cpp.o
+.PHONY : Input.cpp.o
+
+Input.i: Input.cpp.i
+.PHONY : Input.i
+
+# target to preprocess a source file
+Input.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/Input.cpp.i
+.PHONY : Input.cpp.i
+
+Input.s: Input.cpp.s
+.PHONY : Input.s
+
+# target to generate assembly for a file
+Input.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/Input.cpp.s
+.PHONY : Input.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +210,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... dissection"
+	@echo "... Cluster.o"
+	@echo "... Cluster.i"
+	@echo "... Cluster.s"
+	@echo "... Input.o"
+	@echo "... Input.i"
+	@echo "... Input.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

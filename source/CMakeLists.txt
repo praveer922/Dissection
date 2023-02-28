@@ -1,7 +1,11 @@
 ﻿cmake_minimum_required(VERSION 3.13)
 project(dissection)
-add_executable (dissection "main.cpp")
-target_link_directories(dissection PRIVATE ${CMAKE_SOURCE_DIR}/lib/)
+
+
+set(SOURCES main.cpp Input.h Input.cpp Cluster.h Cluster.cpp)
+add_executable(dissection ${SOURCES})
+
+
 target_link_libraries(dissection lunasvg)
 target_link_libraries(dissection glad)
 target_link_libraries(dissection glfw3)
