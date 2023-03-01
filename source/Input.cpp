@@ -17,9 +17,6 @@ Cluster Input::rasterize() {
     if (!bitmap.valid()) {
         std::cout << "bitmap not valid";
     }
-    else {
-        std::cout << "Rasterized " << filepath << " to bitmap\n";
-    }
     
     bitmap.convertToRGBA();
 
@@ -33,6 +30,8 @@ Cluster Input::rasterize() {
             }
         }
     }
+
+    std::cout << "Rasterized " << filepath << " to bitmap. Number of pixels: " << cluster.pixels.size() <<  "\n";
 
     return cluster;
 }

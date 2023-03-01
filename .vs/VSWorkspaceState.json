@@ -24,9 +24,9 @@
   },
   "ExpandedNodes": [
     "",
-    "\\lib",
+    "\\include",
     "\\source"
   ],
-  "SelectedNode": "\\source\\main.cpp",
+  "SelectedNode": "\\source",
   "PreviewInSolutionExplorer": false
 }
