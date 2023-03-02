@@ -1,6 +1,7 @@
 #include "Cluster.h"
 #include <random>
 #include <queue>
+#include <iostream>
 
 Cluster::Cluster() {
 }
@@ -120,6 +121,20 @@ std::pair<int, int> Cluster::getBoundingBoxCenter() {
     int width = maxX - minX + 1;
 
     return std::pair<int, int>(minX+(width/2), minY+(height/2));
+}
 
 
+// utility function to find total number of unmatched pixels between two clusters
+int Cluster::differenceInPixels(Cluster& otherCluster) {
+    std::set<std::pair<int, int>> union_set;
+    std::set_union(pixels.begin(), pixels.end(),
+        otherCluster.pixels.begin(), otherCluster.pixels.end(),
+        std::inserter(union_set, union_set.begin()));
+
+    std::set<std::pair<int, int>> intersection_set;
+    std::set_intersection(pixels.begin(), pixels.end(),
+        otherCluster.pixels.begin(), otherCluster.pixels.end(),
+        std::inserter(intersection_set, intersection_set.begin()));
+
+    return union_set.size() - intersection_set.size();
 }

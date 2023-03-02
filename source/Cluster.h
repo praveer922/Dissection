@@ -18,6 +18,9 @@ public:
     std::pair<Cluster, Cluster> randomSeedFill();
     void setColor(int r, int g, int b);
     std::pair<int, int> getBoundingBoxCenter();
+    int differenceInPixels(Cluster &);
 };
+
+
 
 #endif

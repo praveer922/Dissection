@@ -9,7 +9,7 @@ int main() {
     cluster1.generateRenderMeshes();
     
 
-    Input input2 = Input("input/rectangle.svg", 10, 10);
+    Input input2 = Input("input/pentagon.svg", 10, 10);
     Cluster cluster2 = input2.rasterize();
     cluster2.generateRenderMeshes();
 
