@@ -9,12 +9,13 @@ class Cluster {
 
 public:
     std::set<std::pair<int, int>> pixels;
-    Eigen::MatrixXd pixelsAsMatrix;
+    Eigen::MatrixXi pixelsAsMatrix;
     Eigen::MatrixXd V;
     Eigen::MatrixXi F;
     Eigen::MatrixXd C;
 
     Cluster();
+    Cluster(Eigen::MatrixXi pixelsAsMatrix);
     void generateRenderMeshes();
     std::pair<Cluster, Cluster> randomSeedFill();
     void setColor(int r, int g, int b);

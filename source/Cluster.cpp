@@ -7,6 +7,13 @@
 Cluster::Cluster() {
 }
 
+Cluster::Cluster(Eigen::MatrixXi pixelsAsMatrix) {
+    this->pixelsAsMatrix = pixelsAsMatrix;
+    for (int i = 0; i < pixelsAsMatrix.rows(); i++) {
+        this->pixels.insert(std::pair<int, int>(pixelsAsMatrix.coeff(i, 0), pixelsAsMatrix.coeff(i, 1)));
+    }
+}
+
 void Cluster::setColor(int r, int g, int b) {
     C = Eigen::MatrixXd(pixels.size() * 2, 3);
     for (int i = 0; i < pixels.size() * 2; i++) {
@@ -144,15 +151,12 @@ int Cluster::calculateDistance(Cluster& otherCluster) {
     std::pair<int, int> center = this->getBoundingBoxCenter();
     std::pair<int, int> otherCenter = otherCluster.getBoundingBoxCenter();
 
-   /* Vector2d translation;
+    Eigen::Vector2i translation;
     translation << otherCenter.first - center.first, otherCenter.second - center.second;
 
-    displaced_pixels = points.colwise() + translation;
 
+    Eigen::MatrixXi translated_pixels = pixelsAsMatrix.rowwise() + translation.transpose();
+    Cluster translatedCluster = Cluster(translated_pixels);
 
-    Eigen::Affine2f transform(Translation2f(otherCenter.first - center.first, otherCenter.second - center.second));
-    Eigen::Matrix3f matrix = transform.matrix();*/
-
-    //std::cout << "Transformation matrix: \n" << matrix;
-    return 0;
+    return translatedCluster.differenceInPixels(otherCluster);
 }
