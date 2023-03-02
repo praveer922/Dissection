@@ -1,11 +1,13 @@
 ﻿#include <igl/opengl/glfw/Viewer.h>
 #include <vector>
 #include "Input.h"
+#include <iostream>
 
 int main() {
     Input input1 = Input("input/pentagon.svg", 10, 10);
     Cluster cluster1 = input1.rasterize();
     cluster1.generateRenderMeshes();
+    
 
     Input input2 = Input("input/rectangle.svg", 10, 10);
     Cluster cluster2 = input2.rasterize();
@@ -99,7 +101,7 @@ int main() {
     viewer.data(input2_seed1).set_visible(true, seedfill2_view);
     viewer.data(input2_seed2).set_visible(true, seedfill2_view);
 
-    viewer.launch(false, false, "viewer", 800, 800);
+    viewer.launch(false, false, "Geometric Dissection", 800, 800);
 
     return 0;
 }

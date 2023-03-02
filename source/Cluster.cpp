@@ -91,3 +91,35 @@ std::pair<Cluster, Cluster> Cluster::randomSeedFill() {
 
     return std::pair<Cluster, Cluster>(A,B);
 }
+
+std::pair<int, int> Cluster::getBoundingBoxCenter() {
+    int maxY = 0;
+    int minY = 10;
+    int maxX = 0;
+    int minX = 10;
+
+    for (auto pixel : pixels) {
+        if (pixel.first > maxX) {
+            maxX = pixel.first;
+        }
+
+        if (pixel.first < minX) {
+            minX = pixel.first;
+        }
+
+        if (pixel.second > maxY) {
+            maxY = pixel.second;
+        }
+
+        if (pixel.second < minY) {
+            minY = pixel.second;
+        }
+    }
+
+    int height = maxY - minY + 1;
+    int width = maxX - minX + 1;
+
+    return std::pair<int, int>(minX+(width/2), minY+(height/2));
+
+
+}

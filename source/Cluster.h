@@ -17,6 +17,7 @@ public:
     void generateRenderMeshes();
     std::pair<Cluster, Cluster> randomSeedFill();
     void setColor(int r, int g, int b);
+    std::pair<int, int> getBoundingBoxCenter();
 };
 
 #endif
