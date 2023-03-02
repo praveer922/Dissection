@@ -13,6 +13,9 @@ int main() {
     Cluster cluster2 = input2.rasterize();
     cluster2.generateRenderMeshes();
 
+    cluster1.calculateDistance(cluster2);
+
+
     //begin dissection algorithm
     std::pair<Cluster, Cluster> seedfill_clusters1 = cluster1.randomSeedFill();
     seedfill_clusters1.first.generateRenderMeshes();

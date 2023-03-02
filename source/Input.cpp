@@ -32,6 +32,13 @@ Cluster Input::rasterize() {
     }
 
     std::cout << "Rasterized " << filepath << " to bitmap. Number of pixels: " << cluster.pixels.size() <<  "\n";
+    
+    cluster.pixelsAsMatrix = Eigen::MatrixXd(cluster.pixels.size(), 2);
+    int row = 0;
+    for (auto pixel : cluster.pixels) {
+        cluster.pixelsAsMatrix.row(row) << pixel.first, pixel.second;
+        row++;
+    }
 
     return cluster;
 }

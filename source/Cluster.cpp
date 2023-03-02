@@ -2,6 +2,7 @@
 #include <random>
 #include <queue>
 #include <iostream>
+#include <Eigen/Geometry> 
 
 Cluster::Cluster() {
 }
@@ -137,4 +138,21 @@ int Cluster::differenceInPixels(Cluster& otherCluster) {
         std::inserter(intersection_set, intersection_set.begin()));
 
     return union_set.size() - intersection_set.size();
+}
+
+int Cluster::calculateDistance(Cluster& otherCluster) {
+    std::pair<int, int> center = this->getBoundingBoxCenter();
+    std::pair<int, int> otherCenter = otherCluster.getBoundingBoxCenter();
+
+   /* Vector2d translation;
+    translation << otherCenter.first - center.first, otherCenter.second - center.second;
+
+    displaced_pixels = points.colwise() + translation;
+
+
+    Eigen::Affine2f transform(Translation2f(otherCenter.first - center.first, otherCenter.second - center.second));
+    Eigen::Matrix3f matrix = transform.matrix();*/
+
+    //std::cout << "Transformation matrix: \n" << matrix;
+    return 0;
 }

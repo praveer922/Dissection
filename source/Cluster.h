@@ -9,6 +9,7 @@ class Cluster {
 
 public:
     std::set<std::pair<int, int>> pixels;
+    Eigen::MatrixXd pixelsAsMatrix;
     Eigen::MatrixXd V;
     Eigen::MatrixXi F;
     Eigen::MatrixXd C;
@@ -18,7 +19,8 @@ public:
     std::pair<Cluster, Cluster> randomSeedFill();
     void setColor(int r, int g, int b);
     std::pair<int, int> getBoundingBoxCenter();
-    int differenceInPixels(Cluster &);
+    int differenceInPixels(Cluster & otherCluster);
+    int calculateDistance(Cluster& otherCluster);
 };
 
 
