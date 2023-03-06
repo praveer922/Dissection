@@ -20,16 +20,19 @@ Cluster Input::rasterize() {
     
     bitmap.convertToRGBA();
 
-    Cluster cluster = Cluster();
+    std::set<std::pair<int, int>> pixels;
+    
 
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             int index = i * width * 4 + (j * 4) + 3;
             if (bitmap.data()[index] >= 100) {
-                cluster.pixels.insert(std::pair(j, height - i - 1)); //flip y coordinate because bitmap format is flipped
+                pixels.insert(std::pair(j, height - i - 1)); //flip y coordinate because bitmap format is flipped
             }
         }
     }
+
+    Cluster cluster = Cluster(pixels);
     
     cluster.pixelsAsMatrix = Eigen::MatrixXi(cluster.pixels.size(), 2);
     int row = 0;

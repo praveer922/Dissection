@@ -13,8 +13,9 @@ public:
     Eigen::MatrixXd V;
     Eigen::MatrixXi F;
     Eigen::MatrixXd C;
+    int viewer_mesh_id;
 
-    Cluster();
+    Cluster(std::set<std::pair<int, int>> pixels);
     Cluster(Eigen::MatrixXi pixelsAsMatrix);
     void generateRenderMeshes();
     std::pair<Cluster, Cluster> randomSeedFill();

@@ -153,6 +153,30 @@ Cluster.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/Cluster.cpp.s
 .PHONY : Cluster.cpp.s
 
+ClusterViewer.o: ClusterViewer.cpp.o
+.PHONY : ClusterViewer.o
+
+# target to build an object file
+ClusterViewer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/ClusterViewer.cpp.o
+.PHONY : ClusterViewer.cpp.o
+
+ClusterViewer.i: ClusterViewer.cpp.i
+.PHONY : ClusterViewer.i
+
+# target to preprocess a source file
+ClusterViewer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/ClusterViewer.cpp.i
+.PHONY : ClusterViewer.cpp.i
+
+ClusterViewer.s: ClusterViewer.cpp.s
+.PHONY : ClusterViewer.s
+
+# target to generate assembly for a file
+ClusterViewer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/ClusterViewer.cpp.s
+.PHONY : ClusterViewer.cpp.s
+
 Input.o: Input.cpp.o
 .PHONY : Input.o
 
@@ -213,6 +237,9 @@ help:
 	@echo "... Cluster.o"
 	@echo "... Cluster.i"
 	@echo "... Cluster.s"
+	@echo "... ClusterViewer.o"
+	@echo "... ClusterViewer.i"
+	@echo "... ClusterViewer.s"
 	@echo "... Input.o"
 	@echo "... Input.i"
 	@echo "... Input.s"

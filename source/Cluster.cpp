@@ -4,7 +4,10 @@
 #include <iostream>
 #include <Eigen/Geometry> 
 
-Cluster::Cluster() {
+
+Cluster::Cluster(std::set<std::pair<int, int>> pixels) {
+    this->pixels = pixels;
+    setColor(255, 255, 255);
 }
 
 Cluster::Cluster(Eigen::MatrixXi pixelsAsMatrix) {
@@ -12,6 +15,7 @@ Cluster::Cluster(Eigen::MatrixXi pixelsAsMatrix) {
     for (int i = 0; i < pixelsAsMatrix.rows(); i++) {
         this->pixels.insert(std::pair<int, int>(pixelsAsMatrix.coeff(i, 0), pixelsAsMatrix.coeff(i, 1)));
     }
+    setColor(255, 255, 255);
 }
 
 void Cluster::setColor(int r, int g, int b) {
@@ -60,8 +64,9 @@ std::pair<Cluster, Cluster> Cluster::randomSeedFill() {
 
 
     // begin flood-fill using queue 
-    Cluster A;
-    Cluster B;
+    std::set<std::pair<int, int>> A_pixels;
+    std::set<std::pair<int, int>> B_pixels;
+
     std::queue<std::pair<int,int>> q1;
     std::queue<std::pair<int, int>> q2;
     q1.push(seed_pixel1);
@@ -70,9 +75,9 @@ std::pair<Cluster, Cluster> Cluster::randomSeedFill() {
         if (q1.size() != 0) {
             std::pair<int, int> px = q1.front();
             q1.pop();
-            if (this->pixels.count(px) == 1 && A.pixels.count(px) == 0 && B.pixels.count(px) == 0) { 
+            if (this->pixels.count(px) == 1 && A_pixels.count(px) == 0 && B_pixels.count(px) == 0) { 
                 // this condition ensures the current pixel is in the input shape + not already included + not in the other cluster
-                A.pixels.insert(px);
+                A_pixels.insert(px);
                 q1.push(std::pair<int, int>(px.first + 1, px.second));
                 q1.push(std::pair<int, int>(px.first - 1, px.second));
                 q1.push(std::pair<int, int>(px.first, px.second + 1));
@@ -84,8 +89,8 @@ std::pair<Cluster, Cluster> Cluster::randomSeedFill() {
         if (q2.size() != 0) {
             std::pair<int, int> px = q2.front();
             q2.pop();
-            if (this->pixels.count(px) == 1 && B.pixels.count(px) == 0 && A.pixels.count(px) == 0) { 
-                B.pixels.insert(px);
+            if (this->pixels.count(px) == 1 && B_pixels.count(px) == 0 && A_pixels.count(px) == 0) { 
+                B_pixels.insert(px);
                 q2.push(std::pair<int, int>(px.first + 1, px.second));
                 q2.push(std::pair<int, int>(px.first - 1, px.second));
                 q2.push(std::pair<int, int>(px.first, px.second + 1));
@@ -98,7 +103,10 @@ std::pair<Cluster, Cluster> Cluster::randomSeedFill() {
         }
     }
 
-    return std::pair<Cluster, Cluster>(A,B);
+    Cluster A = Cluster(A_pixels);
+    Cluster B = Cluster(B_pixels);
+
+    return std::pair<Cluster, Cluster>(A, B);
 }
 
 std::pair<int, int> Cluster::getBoundingBoxCenter() {
