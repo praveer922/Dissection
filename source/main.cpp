@@ -10,7 +10,7 @@ int main() {
 
     
 
-    Input input2 = Input("input/rectangle.svg", 10, 10);
+    Input input2 = Input("input/pentagon.svg", 10, 10);
     Cluster cluster2 = input2.rasterize();
 
 
@@ -18,6 +18,10 @@ int main() {
     //begin dissection algorithm
     std::pair<Cluster, Cluster> seedfill_clusters1 = cluster1.randomSeedFill();
     std::pair<Cluster, Cluster> seedfill_clusters2 = cluster2.randomSeedFill();
+
+    int dist = seedfill_clusters1.first.calculateMinDistance(seedfill_clusters2.first);
+
+    std::cout << "Minimum distance between seeds: " << dist << "\n";
 
 
     // visualize results

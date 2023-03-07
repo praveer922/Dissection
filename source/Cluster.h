@@ -22,7 +22,9 @@ public:
     void setColor(int r, int g, int b);
     std::pair<int, int> getBoundingBoxCenter();
     int differenceInPixels(Cluster & otherCluster);
-    int calculateDistance(Cluster& otherCluster);
+    int calculateMinDistance(Cluster& otherCluster);
+    Cluster translateToCenterOfOtherCluster(Cluster& otherCluster);
+    Cluster translateToOrigin();
 };
 
 

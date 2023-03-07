@@ -7,6 +7,12 @@
 
 Cluster::Cluster(std::set<std::pair<int, int>> pixels) {
     this->pixels = pixels;
+    this->pixelsAsMatrix = Eigen::MatrixXi(pixels.size(), 2);
+    int row = 0;
+    for (auto pixel : pixels) {
+        this->pixelsAsMatrix.row(row) << pixel.first, pixel.second;
+        row++;
+    }
     setColor(255, 255, 255);
 }
 
@@ -139,6 +145,27 @@ std::pair<int, int> Cluster::getBoundingBoxCenter() {
     return std::pair<int, int>(minX+(width/2), minY+(height/2));
 }
 
+Cluster Cluster::translateToCenterOfOtherCluster(Cluster& otherCluster) {
+    std::pair<int, int> center = this->getBoundingBoxCenter();
+    std::pair<int, int> otherCenter = otherCluster.getBoundingBoxCenter();
+
+    Eigen::Vector2i translation;
+    translation << otherCenter.first - center.first, otherCenter.second - center.second;
+
+
+    Eigen::MatrixXi translated_pixels = pixelsAsMatrix.rowwise() + translation.transpose();
+    return Cluster(translated_pixels);
+}
+
+Cluster Cluster::translateToOrigin() {
+    std::pair<int, int> center = this->getBoundingBoxCenter();
+    Eigen::Vector2i translation;
+    translation << -center.first, -center.second;
+
+    Eigen::MatrixXi translated_pixels = pixelsAsMatrix.rowwise() + translation.transpose();
+    return Cluster(translated_pixels);
+}
+
 
 // utility function to find total number of unmatched pixels between two clusters
 int Cluster::differenceInPixels(Cluster& otherCluster) {
@@ -155,16 +182,50 @@ int Cluster::differenceInPixels(Cluster& otherCluster) {
     return union_set.size() - intersection_set.size();
 }
 
-int Cluster::calculateDistance(Cluster& otherCluster) {
-    std::pair<int, int> center = this->getBoundingBoxCenter();
-    std::pair<int, int> otherCenter = otherCluster.getBoundingBoxCenter();
+// function for calculating minimum distance between two clusters (after accounting for all valid rotations and flipping)
+int Cluster::calculateMinDistance(Cluster& otherCluster) {
+    Cluster origin_cluster = this->translateToOrigin();
 
-    Eigen::Vector2i translation;
-    translation << otherCenter.first - center.first, otherCenter.second - center.second;
+    std::vector<Eigen::MatrixXi> all_valid_rotations_and_flips;
 
+    Eigen::MatrixXi zero = Eigen::MatrixXi(2, 2);
+    zero << 1, 0, 
+            0, 1;
 
-    Eigen::MatrixXi translated_pixels = pixelsAsMatrix.rowwise() + translation.transpose();
-    Cluster translatedCluster = Cluster(translated_pixels);
+    Eigen::MatrixXi ninety = Eigen::MatrixXi(2, 2);
+    ninety << 0, -1,
+              1, 0;
 
-    return translatedCluster.differenceInPixels(otherCluster);
+    Eigen::MatrixXi one_eighty = Eigen::MatrixXi(2, 2); //equivalent to a horizontal flip
+    one_eighty << -1, 0,
+                   0, -1;
+
+    Eigen::MatrixXi two_seventy = Eigen::MatrixXi(2, 2);
+    two_seventy << 0, 1,
+                   -1, 0;
+
+    Eigen::MatrixXi vertical_flip = Eigen::MatrixXi(2, 2);
+    vertical_flip << -1, 0,
+                       0, 1;
+    
+    all_valid_rotations_and_flips.push_back(zero);
+    all_valid_rotations_and_flips.push_back(ninety);
+    all_valid_rotations_and_flips.push_back(one_eighty);
+    all_valid_rotations_and_flips.push_back(two_seventy);
+    all_valid_rotations_and_flips.push_back(vertical_flip);
+
+    int minDist = INT_MAX;
+
+    for (auto mat : all_valid_rotations_and_flips) {
+        Eigen::MatrixXi rotated_matrix = (mat * origin_cluster.pixelsAsMatrix.transpose()).transpose();
+        Cluster rotated_cluster = Cluster(rotated_matrix);
+        Cluster rotated_and_translated_cluster = rotated_cluster.translateToCenterOfOtherCluster(otherCluster);
+        int newDist = rotated_and_translated_cluster.differenceInPixels(otherCluster);
+        if ( newDist < minDist) {
+            minDist = newDist;
+        }
+    }
+    
+
+    return minDist;
 }
