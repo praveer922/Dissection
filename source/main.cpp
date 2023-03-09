@@ -21,8 +21,13 @@ int main() {
 
     Matching bestMatching = getClosestMatching(seedfill_clusters1, seedfill_clusters2);
 
-    for (auto match : bestMatching.matching) {
-        std::cout << "Match: " << match.first << "," << match.second << "\n";
+    int color = 0;
+
+    for (int i = 0; i < bestMatching.matching.size();i++) {
+        std::pair<int, int> cluster_pair = bestMatching.matching[i];
+        bestMatching.list1[cluster_pair.first].setColor(color, color, color);
+        bestMatching.list2[cluster_pair.second].setColor(color, color, color);
+        color += 100;
     }
 
 
@@ -44,16 +49,16 @@ int main() {
 
     // input 1 seed fills
     Window seed1_window = Window(0, 0, 400, 400);
-    seedfill_clusters1[0].setColor(255, 0, 0);
-    seed1_window.addCluster(seedfill_clusters1[0]);
-    seed1_window.addCluster(seedfill_clusters1[1]);
+    for (auto cluster : bestMatching.list1) {
+        seed1_window.addCluster(cluster);
+    }
     clusterViewer.addWindow(seed1_window);
 
     // input 2 seed fills
     Window seed2_window = Window(400, 0, 400, 400);
-    seedfill_clusters2[0].setColor(255, 0, 0);
-    seed2_window.addCluster(seedfill_clusters2[0]);
-    seed2_window.addCluster(seedfill_clusters2[1]);
+    for (auto cluster : bestMatching.list2) {
+        seed2_window.addCluster(cluster);
+    }
     clusterViewer.addWindow(seed2_window);
 
     clusterViewer.launch();
