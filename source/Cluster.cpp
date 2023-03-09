@@ -2,6 +2,7 @@
 #include <random>
 #include <queue>
 #include <iostream>
+#include <vector>
 #include <Eigen/Geometry> 
 
 
@@ -54,7 +55,8 @@ void Cluster::generateRenderMeshes() {
     }
 }
 
-std::pair<Cluster, Cluster> Cluster::randomSeedFill() {
+// generates two clusters from the given cluster and returns them in a list
+std::vector<Cluster> Cluster::randomSeedFill() {
     // step 1: choose two random seeds
     std::random_device rd; // obtain a random number from hardware
     std::mt19937 gen(rd()); // seed the generator
@@ -112,7 +114,11 @@ std::pair<Cluster, Cluster> Cluster::randomSeedFill() {
     Cluster A = Cluster(A_pixels);
     Cluster B = Cluster(B_pixels);
 
-    return std::pair<Cluster, Cluster>(A, B);
+    std::vector<Cluster> seeds;
+    seeds.push_back(A);
+    seeds.push_back(B);
+
+    return seeds;
 }
 
 std::pair<int, int> Cluster::getBoundingBoxCenter() {
@@ -146,7 +152,7 @@ std::pair<int, int> Cluster::getBoundingBoxCenter() {
 }
 
 Cluster Cluster::translateToCenterOfOtherCluster(Cluster& otherCluster) {
-    std::pair<int, int> center = this->getBoundingBoxCenter();
+    std::pair<int, int> center = getBoundingBoxCenter();
     std::pair<int, int> otherCenter = otherCluster.getBoundingBoxCenter();
 
     Eigen::Vector2i translation;
@@ -158,74 +164,10 @@ Cluster Cluster::translateToCenterOfOtherCluster(Cluster& otherCluster) {
 }
 
 Cluster Cluster::translateToOrigin() {
-    std::pair<int, int> center = this->getBoundingBoxCenter();
+    std::pair<int, int> center = getBoundingBoxCenter();
     Eigen::Vector2i translation;
     translation << -center.first, -center.second;
 
     Eigen::MatrixXi translated_pixels = pixelsAsMatrix.rowwise() + translation.transpose();
     return Cluster(translated_pixels);
-}
-
-
-// utility function to find total number of unmatched pixels between two clusters
-int Cluster::differenceInPixels(Cluster& otherCluster) {
-    std::set<std::pair<int, int>> union_set;
-    std::set_union(pixels.begin(), pixels.end(),
-        otherCluster.pixels.begin(), otherCluster.pixels.end(),
-        std::inserter(union_set, union_set.begin()));
-
-    std::set<std::pair<int, int>> intersection_set;
-    std::set_intersection(pixels.begin(), pixels.end(),
-        otherCluster.pixels.begin(), otherCluster.pixels.end(),
-        std::inserter(intersection_set, intersection_set.begin()));
-
-    return union_set.size() - intersection_set.size();
-}
-
-// function for calculating minimum distance between two clusters (after accounting for all valid rotations and flipping)
-int Cluster::calculateMinDistance(Cluster& otherCluster) {
-    Cluster origin_cluster = this->translateToOrigin();
-
-    std::vector<Eigen::MatrixXi> all_valid_rotations_and_flips;
-
-    Eigen::MatrixXi zero = Eigen::MatrixXi(2, 2);
-    zero << 1, 0, 
-            0, 1;
-
-    Eigen::MatrixXi ninety = Eigen::MatrixXi(2, 2);
-    ninety << 0, -1,
-              1, 0;
-
-    Eigen::MatrixXi one_eighty = Eigen::MatrixXi(2, 2); //equivalent to a horizontal flip
-    one_eighty << -1, 0,
-                   0, -1;
-
-    Eigen::MatrixXi two_seventy = Eigen::MatrixXi(2, 2);
-    two_seventy << 0, 1,
-                   -1, 0;
-
-    Eigen::MatrixXi vertical_flip = Eigen::MatrixXi(2, 2);
-    vertical_flip << -1, 0,
-                       0, 1;
-    
-    all_valid_rotations_and_flips.push_back(zero);
-    all_valid_rotations_and_flips.push_back(ninety);
-    all_valid_rotations_and_flips.push_back(one_eighty);
-    all_valid_rotations_and_flips.push_back(two_seventy);
-    all_valid_rotations_and_flips.push_back(vertical_flip);
-
-    int minDist = INT_MAX;
-
-    for (auto mat : all_valid_rotations_and_flips) {
-        Eigen::MatrixXi rotated_matrix = (mat * origin_cluster.pixelsAsMatrix.transpose()).transpose();
-        Cluster rotated_cluster = Cluster(rotated_matrix);
-        Cluster rotated_and_translated_cluster = rotated_cluster.translateToCenterOfOtherCluster(otherCluster);
-        int newDist = rotated_and_translated_cluster.differenceInPixels(otherCluster);
-        if ( newDist < minDist) {
-            minDist = newDist;
-        }
-    }
-    
-
-    return minDist;
 }

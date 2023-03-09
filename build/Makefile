@@ -177,6 +177,30 @@ ClusterViewer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/ClusterViewer.cpp.s
 .PHONY : ClusterViewer.cpp.s
 
+Dissection.o: Dissection.cpp.o
+.PHONY : Dissection.o
+
+# target to build an object file
+Dissection.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/Dissection.cpp.o
+.PHONY : Dissection.cpp.o
+
+Dissection.i: Dissection.cpp.i
+.PHONY : Dissection.i
+
+# target to preprocess a source file
+Dissection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/Dissection.cpp.i
+.PHONY : Dissection.cpp.i
+
+Dissection.s: Dissection.cpp.s
+.PHONY : Dissection.s
+
+# target to generate assembly for a file
+Dissection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/Dissection.cpp.s
+.PHONY : Dissection.cpp.s
+
 Input.o: Input.cpp.o
 .PHONY : Input.o
 
@@ -200,6 +224,30 @@ Input.s: Input.cpp.s
 Input.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/Input.cpp.s
 .PHONY : Input.cpp.s
+
+Matching.o: Matching.cpp.o
+.PHONY : Matching.o
+
+# target to build an object file
+Matching.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/Matching.cpp.o
+.PHONY : Matching.cpp.o
+
+Matching.i: Matching.cpp.i
+.PHONY : Matching.i
+
+# target to preprocess a source file
+Matching.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/Matching.cpp.i
+.PHONY : Matching.cpp.i
+
+Matching.s: Matching.cpp.s
+.PHONY : Matching.s
+
+# target to generate assembly for a file
+Matching.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dissection.dir/build.make CMakeFiles/dissection.dir/Matching.cpp.s
+.PHONY : Matching.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -240,9 +288,15 @@ help:
 	@echo "... ClusterViewer.o"
 	@echo "... ClusterViewer.i"
 	@echo "... ClusterViewer.s"
+	@echo "... Dissection.o"
+	@echo "... Dissection.i"
+	@echo "... Dissection.s"
 	@echo "... Input.o"
 	@echo "... Input.i"
 	@echo "... Input.s"
+	@echo "... Matching.o"
+	@echo "... Matching.i"
+	@echo "... Matching.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

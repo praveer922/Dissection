@@ -2,7 +2,7 @@
 project(dissection)
 
 
-set(SOURCES main.cpp Input.h Input.cpp Cluster.h Cluster.cpp ClusterViewer.h ClusterViewer.cpp)
+set(SOURCES main.cpp Input.h Input.cpp Cluster.h Cluster.cpp ClusterViewer.h ClusterViewer.cpp Dissection.h Dissection.cpp Matching.h Matching.cpp)
 add_executable(dissection ${SOURCES})
 
 

@@ -1,7 +1,7 @@
 ﻿#include <igl/opengl/glfw/Viewer.h>
-#include <vector>
 #include "Input.h"
 #include "ClusterViewer.h"
+#include "Dissection.h"
 #include <iostream>
 
 int main() {
@@ -16,12 +16,14 @@ int main() {
 
 
     //begin dissection algorithm
-    std::pair<Cluster, Cluster> seedfill_clusters1 = cluster1.randomSeedFill();
-    std::pair<Cluster, Cluster> seedfill_clusters2 = cluster2.randomSeedFill();
+    std::vector<Cluster> seedfill_clusters1 = cluster1.randomSeedFill();
+    std::vector<Cluster> seedfill_clusters2 = cluster2.randomSeedFill();
 
-    int dist = seedfill_clusters1.first.calculateMinDistance(seedfill_clusters2.first);
+    Matching bestMatching = getClosestMatching(seedfill_clusters1, seedfill_clusters2);
 
-    std::cout << "Minimum distance between seeds: " << dist << "\n";
+    for (auto match : bestMatching.matching) {
+        std::cout << "Match: " << match.first << "," << match.second << "\n";
+    }
 
 
     // visualize results
@@ -42,16 +44,16 @@ int main() {
 
     // input 1 seed fills
     Window seed1_window = Window(0, 0, 400, 400);
-    seedfill_clusters1.first.setColor(255, 0, 0);
-    seed1_window.addCluster(seedfill_clusters1.first);
-    seed1_window.addCluster(seedfill_clusters1.second);
+    seedfill_clusters1[0].setColor(255, 0, 0);
+    seed1_window.addCluster(seedfill_clusters1[0]);
+    seed1_window.addCluster(seedfill_clusters1[1]);
     clusterViewer.addWindow(seed1_window);
 
     // input 2 seed fills
     Window seed2_window = Window(400, 0, 400, 400);
-    seedfill_clusters2.first.setColor(255, 0, 0);
-    seed2_window.addCluster(seedfill_clusters2.first);
-    seed2_window.addCluster(seedfill_clusters2.second);
+    seedfill_clusters2[0].setColor(255, 0, 0);
+    seed2_window.addCluster(seedfill_clusters2[0]);
+    seed2_window.addCluster(seedfill_clusters2[1]);
     clusterViewer.addWindow(seed2_window);
 
     clusterViewer.launch();

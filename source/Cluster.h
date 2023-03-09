@@ -18,11 +18,9 @@ public:
     Cluster(std::set<std::pair<int, int>> pixels);
     Cluster(Eigen::MatrixXi pixelsAsMatrix);
     void generateRenderMeshes();
-    std::pair<Cluster, Cluster> randomSeedFill();
+    std::vector<Cluster> randomSeedFill();
     void setColor(int r, int g, int b);
     std::pair<int, int> getBoundingBoxCenter();
-    int differenceInPixels(Cluster & otherCluster);
-    int calculateMinDistance(Cluster& otherCluster);
     Cluster translateToCenterOfOtherCluster(Cluster& otherCluster);
     Cluster translateToOrigin();
 };
