@@ -37,20 +37,33 @@ void Cluster::generateRenderMeshes() {
     // so this generates 4 points and 2 faces for each pixel
 
     V = Eigen::MatrixXd(pixels.size() * 4, 2);
+    V1 = Eigen::MatrixXd(pixels.size(), 2);
+    V2 = Eigen::MatrixXd(pixels.size(), 2);
+    V3 = Eigen::MatrixXd(pixels.size(), 2);
+    V4 = Eigen::MatrixXd(pixels.size(), 2);
     F = Eigen::MatrixXi(pixels.size() * 2, 3);
 
     int Vrow = 0;
+    int Virow = 0;
     int Frow = 0;
     for (auto pixel : pixels) {
         V.row(Vrow) << pixel.first - 0.5, pixel.second - 0.5;
+        V1.row(Virow) << pixel.first - 0.5, pixel.second - 0.5;
+
         V.row(Vrow + 1) << pixel.first - 0.5, pixel.second + 0.5;
+        V2.row(Virow) << pixel.first - 0.5, pixel.second + 0.5;
+
         V.row(Vrow + 2) << pixel.first + 0.5, pixel.second + 0.5;
+        V3.row(Virow) << pixel.first + 0.5, pixel.second + 0.5;
+
         V.row(Vrow + 3) << pixel.first + 0.5, pixel.second - 0.5;
+        V4.row(Virow) << pixel.first + 0.5, pixel.second - 0.5;
 
         F.row(Frow) << Vrow, Vrow + 1, Vrow + 2;
         F.row(Frow + 1) << Vrow, Vrow + 3, Vrow + 2;
 
         Vrow += 4;
+        Virow++;
         Frow += 2;
     }
 }

@@ -34,10 +34,15 @@ void ClusterViewer::launch() {
 			Cluster* cluster = &(windows[i].clusters[j]);
 			cluster->generateRenderMeshes();
 
-			// then set mesh data in the viewer
+			// then set mesh data in the viewer, and add edges for each pixel
 			cluster->viewer_mesh_id = viewer.append_mesh(false);
 			viewer.data().set_mesh(cluster->V, cluster->F);
+			viewer.data().show_lines = false;
 			viewer.data().set_colors(cluster->C);
+			viewer.data().add_edges(cluster->V1, cluster->V2, Eigen::RowVector3d(0, 0, 0));
+			viewer.data().add_edges(cluster->V2, cluster->V3, Eigen::RowVector3d(0, 0, 0));
+			viewer.data().add_edges(cluster->V3, cluster->V4, Eigen::RowVector3d(0, 0, 0));
+			viewer.data().add_edges(cluster->V4, cluster->V1, Eigen::RowVector3d(0, 0, 0));
 		}
 	}
 

@@ -11,6 +11,11 @@ public:
     std::set<std::pair<int, int>> pixels;
     Eigen::MatrixXi pixelsAsMatrix;
     Eigen::MatrixXd V;
+    // V1 to V4 are used for adding edges for each pixel square
+    Eigen::MatrixXd V1;
+    Eigen::MatrixXd V2;
+    Eigen::MatrixXd V3;
+    Eigen::MatrixXd V4;
     Eigen::MatrixXi F;
     Eigen::MatrixXd C;
     int viewer_mesh_id;
