@@ -21,13 +21,15 @@ int main() {
 
     Matching bestMatching = getClosestMatching(seedfill_clusters1, seedfill_clusters2);
 
-    int color = 0;
 
+    // assign colors to matched clusters
+    int colors[] = { 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 255 , 0};
+    int colorIndex = 0;
     for (int i = 0; i < bestMatching.matching.size();i++) {
         std::pair<int, int> cluster_pair = bestMatching.matching[i];
-        bestMatching.list1[cluster_pair.first].setColor(color, color, color);
-        bestMatching.list2[cluster_pair.second].setColor(color, color, color);
-        color += 100;
+        bestMatching.list1[cluster_pair.first].setColor(colors[colorIndex], colors[colorIndex+1], colors[colorIndex+2]);
+        bestMatching.list2[cluster_pair.second].setColor(colors[colorIndex], colors[colorIndex + 1], colors[colorIndex + 2]);
+        colorIndex += 3;
     }
 
 
